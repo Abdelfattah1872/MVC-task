@@ -16,8 +16,6 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -36,22 +34,6 @@
                 <ul class="navbar-nav mr-auto mx-3">
                     @if(Auth::user())
                         <li class="nav-item dropdown">
-                            <a style="font-family:'Bodoni MT Black';font-size: 15px" id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                Posts <span class="caret"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a  class="dropdown-item" href="{{route('post.create')}}" >
-                                    Add New
-                                </a>
-                                <a class="dropdown-item" href="{{route('post.index')}}" >
-                                    View All
-                                </a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a style="font-family:'Bodoni MT Black';font-size: 15px"  class="nav-link" href="{{route('post.index')}}" role="button"> Pages</a>
-
-                        <li class="nav-item dropdown">
                             <a style="font-family:'Bodoni MT Black';font-size: 15px" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Users <span class="caret"></span>
                             </a>
@@ -60,6 +42,22 @@
                                     Add New
                                 </a>
                                 <a class="dropdown-item" href="{{route('user.index')}}" >
+                                    View All
+                                </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a style="font-family:'Bodoni MT Black';font-size: 15px"  class="nav-link" href="{{route('post.index')}}" role="button"> Pages</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a style="font-family:'Bodoni MT Black';font-size: 15px" id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                Posts <span class="caret"></span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a  class="dropdown-item" href="{{route('post.create')}}" >
+                                    Add New
+                                </a>
+                                <a class="dropdown-item" href="{{url('/above')}}" >
                                     View All
                                 </a>
                             </div>

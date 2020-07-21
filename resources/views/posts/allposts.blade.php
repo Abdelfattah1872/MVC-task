@@ -1,13 +1,14 @@
 @extends('layouts.layout')
 @section('title')
-    Post Page
+   All Posts Page
 @endsection
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 text-center">
-                <H1 style="font-family:'Bodoni MT Black';color: #4c110f" class="my-2">Post Page</H1>
-                <div class="content d-flex text-center" style="justify-content: space-between;border:3px solid black;">
+                <H1 style="font-family:'Bodoni MT Black';color: #4c110f" class="my-4">All Posts Page</H1>
+                @foreach($data as $data)
+                <div class="content d-flex text-center my-3" style="justify-content: space-between;border:3px solid black;">
                     <div class="card  w-100 text-center">
                         <div class="row no-gutters">
                             <div class="col-md-4">
@@ -35,6 +36,7 @@
                         </div>
                     </div>
                 </div>
+                    @endforeach
             </div>
         </div>
     </div>

@@ -68,6 +68,14 @@ class PostController extends Controller
     return view('posts.custumpost',compact('data'));
     }
 
+    public function above()
+    {
+        $data = Post::all();
+        return view('posts.allposts',compact('data'));
+    }
+
+
+
     /**
      * Show the form for editing the specified resource.
      *
