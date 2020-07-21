@@ -24,7 +24,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand" href="{{ url('/') }}" style="font-family:'Bodoni MT Black';color: chartreuse;font-size: 2rem;">
                 Inspire-task
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -33,10 +33,10 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto mx-3">
                     @if(Auth::user())
                         <li class="nav-item dropdown">
-                            <a style="font-family:'Bodoni MT Black'" id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a style="font-family:'Bodoni MT Black';font-size: 15px" id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Posts <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -49,21 +49,10 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a style="font-family:'Bodoni MT Black'" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                               Pages <span class="caret"></span>
-                            </a>
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="" >
-                                    Add New
-                                </a>
-                                <a class="dropdown-item" href="" >
-                                    View All
-                                </a>
-                            </div>
-                        </li>
+                            <a style="font-family:'Bodoni MT Black';font-size: 15px"  class="nav-link" href="{{route('post.index')}}" role="button"> Pages</a>
 
                         <li class="nav-item dropdown">
-                            <a style="font-family:'Bodoni MT Black'" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a style="font-family:'Bodoni MT Black';font-size: 15px" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Users <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

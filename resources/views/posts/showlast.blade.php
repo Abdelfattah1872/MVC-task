@@ -1,21 +1,33 @@
 @extends('layouts.layout')
 @section('title')
-    show all Posts
+    Main Page
 @endsection
 @section('content')
     <div class="container text-center">
-        <H1 style="font-family:'Bodoni MT Black';color: #4c110f">All Posts</H1>
+        <H1 style="font-family:'Bodoni MT Black';color: #4c110f">Main Page</H1>
         <div class="row justify-content-center">
             <div class="col-md-12 text-center">
                 <div class="content d-flex text-center" style="justify-content: space-between;flex-wrap: wrap">
                     @foreach($data as $post)
-                        <div class="card card-dark bg-dark mt-5 mx-2" style="width: 18rem;">
+                        <div class="card card-dark bg-dark mt-5 mx-2" style="width: 25rem;">
                             <img src="{{asset('uploads/'.$post->image)}}" class="card-img-top" style="height: 200px">
                             <div class="card-body">
-                                <h5 class="card-title text-white">{{$post->title}}</h5>
-                                <p class="card-text text-white" style="">{{$post->brief}}</p>
-                                <p class="card-text"><small class="text-muted"></small></p>
-                                <a href="" class="btn btn-info">read more</a>
+                                <h5 class="card-title text-white">Title : {{$post->title}}</h5>
+                                <p class="card-text text-white" style="">Brief : {{$post->brief}}</p>
+                                <div class="card-group">
+                                    <div class="text-center ml-auto">
+                                        <a href="{{route('post.edit', $post->id)}}" style="color: black;text-decoration: none" class="btn bg-success" ><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a>
+                                    </div>
+
+                                    <form method="post" action="{{route('post.destroy', $post->id)}}"class="mr-auto mx-2">
+                                        <div class="form-group text-center">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit"  class="btn bg-danger" ><i class="fa fa-2x fa-trash-o" aria-hidden="true"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <a href="{{route('post.show',$post->id)}}" class="btn btn-info m-2">Read more</a>
                             </div>
                         </div>
                     @endforeach
