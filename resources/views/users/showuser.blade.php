@@ -5,6 +5,7 @@
 @section('content')
     <div class="container text-center">
         <h1>All Users</h1>
+        <a href=""><i class="fa fa-2x fa-plus" aria-hidden="true"></i></a>
         <table class="table">
             <thead class="thead-dark">
             <tr>
@@ -18,11 +19,11 @@
             <tbody>
             <tr>
                 @foreach($data as $user)
-                <th scope="row">{{ $user->id }}</th>
-                <td>{{ $user->name }}</td>
-                <td>{{ $user->email }}</td>
-                <td><a href=""><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a></td>
-                <td><a href=""><i class="fa fa-2x fa-trash-o" aria-hidden="true"></i></a></td>
+                    <th scope="row">{{ $user->id }}</th>
+                    <td>{{ $user->name }}</td>
+                    <td>{{ $user->email }}</td>
+                    <td><a href=""><i class="fa fa-2x fa-pencil" aria-hidden="true"></i></a></td>
+                    <td><a href=""><i class="fa fa-2x fa-trash-o" aria-hidden="true"></i></a></td>
             </tr>
             @endforeach
             </tbody>
