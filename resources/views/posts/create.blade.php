@@ -3,15 +3,18 @@
     Add New Post
 @endsection
 @section('content')
+    {{-- CREATE NEW POST OR PAGE   --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card text-center bg-warning">
                     <div class="card-header" style="font-family:'Bodoni MT Black'"><h1>Add New Post</h1></div>
                     <div class="card-body text-center">
+                    {{--        SUCCESS MESSAGE                --}}
                         @if (session()->get('success'))
                             <div class="alert alert-dark text-center">{{ session()->get('success') }}</div>
                         @endif
+                        {{--        DATA WILL BE STORE                --}}
                         <form method="POST" action="{{route('post.store')}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-group text-center">

@@ -3,11 +3,13 @@
     Add new User
 @endsection
 @section('content')
+    {{--  ADD NEW USER   --}}
     <div class="container text-center">
         <h1>Add new User</h1>
         @if (session()->get('success'))
             <div class="alert alert-success text-center">{{ session()->get('success') }}</div>
         @endif
+        {{--  DATA OF NEW USER   --}}
         <form action="{{ route('user.store') }}" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>

@@ -3,11 +3,13 @@
     Edit User
 @endsection
 @section('content')
+    {{-- EDIT EXISTING USER     --}}
     <div class="container text-center">
         <h1>Edit new User</h1>
         @if (session()->get('success'))
             <div class="alert alert-success text-center">{{ session()->get('success') }}</div>
         @endif
+        {{-- UPDATE DATA     --}}
         <form action="{{ route('user.update',$data->id) }}" method="post">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>

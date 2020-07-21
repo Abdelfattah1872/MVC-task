@@ -3,6 +3,7 @@
     Main Page
 @endsection
 @section('content')
+    {{--  SHOW ALL POSTS IN PAGE VIEW   --}}
     <div class="container text-right">
         <H1 class="text-center" style="font-family:'Bodoni MT Black';color: #4c110f">Main Page</H1>
         <div class="new">
@@ -11,6 +12,7 @@
         <div class="row justify-content-center text-center">
             <div class="col-md-12 text-center">
                 <div class="content d-flex text-center" style="justify-content: space-between;flex-wrap: wrap">
+                {{--     LOOP ON THE DATABASE TO GET ALL PAGES         --}}
                     @foreach($data as $post)
                         <div class="card card-dark bg-dark mt-5 mx-2" style="width: 19rem;">
                             <img src="{{asset('uploads/'.$post->image)}}" class="card-img-top" style="height: 200px">

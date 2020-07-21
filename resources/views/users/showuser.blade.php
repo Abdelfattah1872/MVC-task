@@ -3,7 +3,7 @@
     All users
 @endsection
 @section('content')
-
+    {{--  SHOW ALL USERS --}}
     <div class="container text-right">
         <h1 style="font-family:'Bodoni MT Black'" class="text-center">All Users</h1>
         <a href="{{route('user.create')}}" class="btn bg-primary"><i class="fa fa-2x fa-plus" aria-hidden="true"></i></a>
@@ -19,6 +19,7 @@
             </thead>
             <tbody>
             <tr>
+                {{--  LOOP ON DATABASE TO GET ALL USERS --}}
                 @foreach($data as $user)
                     <th scope="row">{{ $user->id }}</th>
                     <td>{{ $user->name }}</td>

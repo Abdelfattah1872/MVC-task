@@ -1,12 +1,14 @@
 @extends('layouts.layout')
 @section('title')
-   All Posts Page
+   All Posts
 @endsection
 @section('content')
+    {{--  SHOW ALL POSTS  --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 text-center">
                 <H1 style="font-family:'Bodoni MT Black';color: #4c110f" class="my-4">All Posts Page</H1>
+               {{--          LOOP ON OUR DATABASE TO GET ALL POSTS              --}}
                 @foreach($data as $data)
                 <div class="content d-flex text-center my-3" style="justify-content: space-between;border:3px solid black;">
                     <div class="card  w-100 text-center">
@@ -20,9 +22,11 @@
                                     <p class="card-text" style="font-weight: bold;color: blue"> {{$data->cont}}</p>
                                     <h4 class="card-text"> Created at : {{ $data->created_at }}</h4>
                                     <div class="card-group">
+                                    {{--            EDIT BUTTON                            --}}
                                         <div class="text-center m-auto">
                                             <a href="{{route('post.edit', $data->id)}}" style="color: black;text-decoration: none" class="btn bg-success" ><i class="fa fa-3x fa-pencil" aria-hidden="true"></i></a>
                                         </div>
+                                    {{--            DELETE BUTTON                            --}}
                                         <form method="post" action="{{route('post.destroy', $data->id)}}"class="m-auto">
                                             <div class="form-group text-center">
                                                 @method('DELETE')

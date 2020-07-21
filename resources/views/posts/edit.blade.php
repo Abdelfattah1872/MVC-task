@@ -3,15 +3,18 @@
     Edit Post
 @endsection
 @section('content')
+    {{-- EDIT POST AND UPDATE IT IN THE DATABASE   --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card text-center bg-primary">
                     <div class="card-header" style="font-family:'Bodoni MT Black'"><h1>Edit Post</h1></div>
                     <div class="card-body text-center">
+                    {{--    EDIT POST AND UPDATE IT IN THE DATABASE     --}}
                     @if (session()->get('success'))
                             <div class="alert alert-dark text-center">{{ session()->get('success') }}</div>
                         @endif
+                         {{--     UPDATE DATA        --}}
                         <form method="POST" action="{{route('post.update',$data->id)}}" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
