@@ -12,6 +12,8 @@ class PostController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+    //    MAIN PAGE AFTER LOGIN
     public function index()
     {
         $data = Post::all();
@@ -23,6 +25,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+
+    //    ADD NEW POST VIEW (PAGE)
     public function create()
     {
         return view('posts.create');
@@ -34,6 +39,8 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
+
+    //    STORE THE NEW POST DATA INO OUR DATA BASE AFTER VERFICATION
     public function store(Request $request)
     {
         //  Validate the inputs
@@ -62,12 +69,17 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+
+    //    SHOW AN POST  AS PER HIS UNIQE ID
     public function show($id)
     {
     $data = Post::findOrfail($id);
     return view('posts.custumpost',compact('data'));
     }
 
+
+    //    GET ALL POSTS FROM OUR DATABASE
     public function above()
     {
         $data = Post::all();
@@ -82,6 +94,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+
+    //    GO TO THE EDIT POST AS PER HIS UNIQE ID
     public function edit($id)
     {
         $data = Post::findOrfail($id);
@@ -95,6 +110,8 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
+
+    //    EDIT AN EXISTING POST DATA
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -120,6 +137,9 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+
+    //    DELETE AN EXISTING POST DATA
     public function destroy($id)
     {
         Post::findOrFail($id)->delete();

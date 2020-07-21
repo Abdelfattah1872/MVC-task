@@ -16,6 +16,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+    //   SHOW ALL USERS DATA
     public function index()
     {
         $data = User::all();
@@ -27,6 +29,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+
+    //    ADD NEW USER VIEW (PAGE)
     public function create()
     {
         return view('users.addnew');
@@ -38,6 +43,8 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\RedirectResponse
      */
+
+    //    STORE THE NEW USER DATA INO OUR DATA BASE AFTER VERFICATION
     public function store(Request $request)
     {
         $request->validate([
@@ -68,6 +75,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
+
+    //    GO TO THE EDIT PAGE AS PER HIS UNIQE ID
     public function edit($id)
     {
         $data = User::findOrfail($id);
@@ -81,6 +90,8 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
+
+    //    EDIT AN EXISTING USER DATA
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -104,6 +115,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\RedirectResponse
      */
+
+
+
+    //    DELETE AN EXISTING USER DATA
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
