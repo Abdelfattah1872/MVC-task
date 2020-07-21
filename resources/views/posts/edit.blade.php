@@ -18,20 +18,24 @@
                             <div class="form-group text-center">
                                 <label for="exampleInputEmail1">Title</label>
                                 <input type="text" class="form-control" name="title" value="{{ $data->title }}" required>
+                                {{ $errors->first('title') }}
                             </div>
                             <div class="form-group text-center">
                                 <label for="exampleInputEmail1">Brief</label>
                                 <input type="text" class="form-control" value="{{ $data->brief }}" name="brief" required>
+                                {{ $errors->first('brief') }}
                             </div>
 
                             <div class="form-group text-center">
                                 <label for="exampleInputEmail1">Add Content</label>
                                 <textarea name="cont" rows="10" class="form-control" required>{{ $data->cont }}</textarea>
+                                {{ $errors->first('cont') }}
                             </div>
 
                             <div class="form-group text-center">
                                 <label for="exampleInputEmail1">Add image</label>
                                 <input type="file" class="form-control" name="image" required>
+                                {{ $errors->first('image') }}
                             </div>
                             <button type="submit" class="btn btn-success btn-block">Submit</button>
                         </form>

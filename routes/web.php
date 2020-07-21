@@ -7,7 +7,6 @@ Auth::routes();
 #################### only Register user ####################################
 Route::group(['middleware'=>'auth'], function () {
     Route::get('/','PostController@index');
-    Route::get('/home','PostController@index');
     Route::resource('user', 'UserController');
     Route::resource('post', 'PostController');
     Route::get('above', 'PostController@above');

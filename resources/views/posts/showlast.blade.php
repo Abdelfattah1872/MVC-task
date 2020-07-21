@@ -12,7 +12,7 @@
             <div class="col-md-12 text-center">
                 <div class="content d-flex text-center" style="justify-content: space-between;flex-wrap: wrap">
                     @foreach($data as $post)
-                        <div class="card card-dark bg-dark mt-5 mx-2" style="width: 25rem;">
+                        <div class="card card-dark bg-dark mt-5 mx-2" style="width: 19rem;">
                             <img src="{{asset('uploads/'.$post->image)}}" class="card-img-top" style="height: 200px">
                             <div class="card-body">
                                 <h5 class="card-title text-white">Title : {{$post->title}}</h5>

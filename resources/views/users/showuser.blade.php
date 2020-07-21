@@ -3,15 +3,16 @@
     All users
 @endsection
 @section('content')
-    <div class="container text-center">
-        <h1 style="font-family:'Bodoni MT Black'">All Users</h1>
-        <a href="{{route('user.create')}}" class="btn bg-primary w-50"><i class="fa fa-2x fa-plus" aria-hidden="true"></i></a>
-        <table class="table">
+
+    <div class="container text-right">
+        <h1 style="font-family:'Bodoni MT Black'" class="text-center">All Users</h1>
+        <a href="{{route('user.create')}}" class="btn bg-primary"><i class="fa fa-2x fa-plus" aria-hidden="true"></i></a>
+        <table class="table text-center">
             <thead class="thead-dark">
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">User Name</th>
-                <th scope="col">user Email</th>
+                <th scope="col">User Email</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>

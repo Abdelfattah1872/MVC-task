@@ -12,16 +12,19 @@
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" class="form-control" value="{{$data->email}}" name="email">
+                {{ $errors->first('email') }}
             </div>
             @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" class="form-control" value="{{$data->password}}" name="password">
+                {{ $errors->first('password') }}
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Name</label>
                 <input type="text" class="form-control" value="{{$data->name}}" name="name">
+                {{ $errors->first('name') }}
             </div>
 
             <button type="submit" class="btn btn-primary">Submit</button>

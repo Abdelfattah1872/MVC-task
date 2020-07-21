@@ -38,9 +38,9 @@ class PostController extends Controller
     {
         //  Validate the inputs
         $request->validate([
-            'title'=>"required|string|min:1|max:25",
-            'brief'=>"required|string|min:1|max:50",
-            'cont'=>"required|string|min:10"
+            'title'=>"required|string|min:4|max:25",
+            'brief'=>"required|string|min:6|max:50",
+            'cont'=>"required|string|min:10|max:600"
         ]);
         //        upload image
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
@@ -98,9 +98,9 @@ class PostController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title'=>"required|string|min:1|max:25",
-            'brief'=>"required|string|min:1|max:50",
-            'cont'=>"required|string|min:10"
+            'title'=>"required|string|min:4|max:25",
+            'brief'=>"required|string|min:6|max:50",
+            'cont'=>"required|string|min:10|max:600"
         ]);
         $data = Post::findOrfail($id);
         $imageName = time().'.'.request()->image->getClientOriginalExtension();
