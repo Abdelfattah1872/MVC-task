@@ -40,7 +40,7 @@
                                 Posts <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a  class="dropdown-item" href="" >
+                                <a  class="dropdown-item" href="{{route('post.create')}}" >
                                     Add New
                                 </a>
                                 <a class="dropdown-item" href="{{route('post.index')}}" >
