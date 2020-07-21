@@ -36,14 +36,14 @@
                 <ul class="navbar-nav mr-auto">
                     @if(Auth::user())
                         <li class="nav-item dropdown">
-                            <a style="font-family:'Bodoni MT Black'" id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a style="font-family:'Bodoni MT Black'" id="navbarDropdown" class="nav-link dropdown-toggle" href="" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 Posts <span class="caret"></span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a  class="dropdown-item" href="" >
                                     Add New
                                 </a>
-                                <a class="dropdown-item" href="" >
+                                <a class="dropdown-item" href="{{route('post.index')}}" >
                                     View All
                                 </a>
                             </div>
@@ -70,7 +70,7 @@
                                 <a class="dropdown-item" href="" >
                                     Add New
                                 </a>
-                                <a class="dropdown-item" href="" >
+                                <a class="dropdown-item" href="{{route('user.index')}}" >
                                     View All
                                 </a>
                             </div>
