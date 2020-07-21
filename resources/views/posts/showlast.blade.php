@@ -1,4 +1,4 @@
-@extends('posts.layers.layout')
+@extends('layouts.layout')
 @section('title')
     show all Posts
 @endsection

@@ -7,6 +7,10 @@ use App\User;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -21,11 +25,11 @@ class UserController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        //
+        return view('users.addnew');
     }
 
     /**
@@ -36,7 +40,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name'=>"required|string|min:1|max:50",
+            'email'=>"required",
+            'password'=>"required|min:8"
+        ]);
+
+        $data = new User();
+        $data->name        = $request->name;
+        $data->password    = $request->password;
+        $data->email       = $request->email;
+        $data->save();
+        session()->flash('success',"Thank You:)");
+        return back();
     }
 
     /**
@@ -54,11 +70,12 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($id)
     {
-        //
+        $data = User::findOrfail($id);
+        return view('users.edituser',compact('data'));
     }
 
     /**
@@ -70,7 +87,19 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name'=>"required|string|min:1|max:50",
+            'email'=>"required",
+            'password'=>"required|min:8"
+        ]);
+
+        $data = User::findOrfail($id);
+        $data->name        = $request->name;
+        $data->password    = $request->password;
+        $data->email       = $request->email;
+        $data->save();
+        session()->flash('success',"Thank You:)");
+        return back();
     }
 
     /**
@@ -81,6 +110,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        User::findOrFail($id)->delete();
+        session()->flash('success',"Deleted:)");
+        return back();
     }
 }
